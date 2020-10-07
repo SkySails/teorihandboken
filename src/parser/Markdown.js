@@ -60,7 +60,10 @@ const Shortcode = (props) => {
     case "full-bleed":
       return (
         <div className="full-bleed">
-          <img src={props.attributes.src} />
+          <img
+            src={props.attributes.src}
+            style={{ maxWidth: props.attributes.maxWidth }}
+          />
         </div>
       );
     default:
