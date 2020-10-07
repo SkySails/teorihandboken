@@ -95,7 +95,7 @@ const PostContainer = styled.main`
   img:not(.profile) {
     max-height: 50vh;
     /* max-width: 1000px; */
-    border-radius: 10px;
+    border-radius: 3px;
     display: block;
     width: 100%;
     margin: auto;
