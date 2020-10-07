@@ -32,6 +32,14 @@ const Container = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+
+  section {
+    position: relative;
+  }
 
   .data > div {
     display: flex;
@@ -51,8 +59,9 @@ const Container = styled.div`
 
   #half-circle {
     position: absolute;
-    bottom: -7px;
-    left: 0;
+    display: none;
+    bottom: -10px;
+    left: -5px;
     width: 75px;
     height: 51px;
     fill: none;
@@ -69,5 +78,5 @@ const Picture = styled.img`
   height: 55px !important;
   display: block;
   overflow: hidden;
-  margin: 10px 10px;
+  margin: -10px 10px 5px 5px;
 `;
