@@ -17,9 +17,7 @@ export default function PostTemplate({ content, data }) {
         (h) => h.innerText !== "Innehåll"
       )
     );
-    window.onscroll = function () {
-      updateScrollProgress();
-    };
+    window.addEventListener("scroll", updateScrollProgress, false);
 
     function updateScrollProgress() {
       var winScroll =
@@ -30,6 +28,8 @@ export default function PostTemplate({ content, data }) {
       var scrolled = (winScroll / height) * 100;
       document.getElementById("bar").style.width = scrolled + "%";
     }
+    return () =>
+      window.removeEventListener(scroll, updateScrollProgress, false);
   }, []);
 
   return (
