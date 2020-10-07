@@ -21,7 +21,7 @@ export default function Avatar({ name, src }) {
       <section className="data">
         <div>
           <span>Author</span>
-          <span>{name}</span>
+          <span className="author-name">{name}</span>
         </div>
       </section>
     </Container>
