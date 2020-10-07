@@ -9,6 +9,7 @@ import Arrow from "../src/icons/Arrow";
 export default function Home({ posts }) {
   return (
     <Container>
+      <h1>Blogginlägg</h1>
       {posts.map(
         ({
           frontmatter: { title, description, date, snippet, tags },
@@ -76,7 +77,7 @@ const Container = styled.main`
 
     .tag {
       padding: 5px 10px;
-      background: #128cde;
+      background: linear-gradient(90deg, #128cde 0%, #00ffc2 250%);
       border-radius: 20px;
       font-size: 0.7em;
       display: flex;
