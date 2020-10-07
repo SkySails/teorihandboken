@@ -62,7 +62,10 @@ const Shortcode = (props) => {
         <div className="full-bleed">
           <img
             src={props.attributes.src}
-            style={{ maxWidth: props.attributes.maxWidth }}
+            style={{
+              maxWidth: props.attributes.maxWidth,
+              objectFit: props.attributes.preserveRatio ? "contain" : "cover",
+            }}
           />
         </div>
       );
