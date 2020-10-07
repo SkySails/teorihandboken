@@ -44,14 +44,7 @@ export default function PostTemplate({ content, data }) {
         <h1 className="post-subject">{data.title}</h1>
         <Avatar name={data.author} src={data.author_img} />
       </Intro>
-      <hr
-        style={{
-          width: "calc(100% - 40px)",
-          margin: "20px auto",
-          opacity: 0.6,
-          borderTop: "2px solid #00ffc2",
-        }}
-      ></hr>
+
       {headings && (
         <ContentTable>
           <h2 style={{ marginBottom: 20 }}>Innehåll</h2>
