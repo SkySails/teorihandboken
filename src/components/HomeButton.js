@@ -15,7 +15,7 @@ export default function HomeButton() {
 
 const StyledArrow = styled(Arrow)`
   width: 25px;
-  margin-left: -20px;
+  margin-right: 10px;
   transition: 150ms;
   transform: rotate(180deg);
 `;
@@ -32,10 +32,5 @@ const StyledAnchor = styled.a`
 
   &:hover {
     color: #00ffc2;
-  }
-
-  svg {
-    position: absolute;
-    left: 7px;
   }
 `;
