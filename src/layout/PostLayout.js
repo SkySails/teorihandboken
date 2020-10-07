@@ -87,15 +87,15 @@ const PostContainer = styled.main`
   p {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    line-height: 1.5em;
+    line-height: 1.6em;
+    font-size: 1.2em;
+    color: #e5e5e5;
   }
 
   img:not(.profile) {
     max-height: 50vh;
     /* max-width: 1000px; */
     border-radius: 10px;
-    -o-object-fit: cover;
-    object-fit: cover;
     display: block;
     width: 100%;
     margin: auto;
@@ -130,6 +130,11 @@ const PostContainer = styled.main`
   }
 
   ul {
-    margin: 10px 0 10px 40px;
+    margin: 0px 0 5px 40px;
+    line-height: 1.8em;
+    li {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
   }
 `;
