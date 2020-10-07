@@ -1,11 +1,10 @@
 ---
 title: "Design för webben"
-date: "2020-10-05"
+date: "2020-10-07"
 author: "Malte Hallström"
 author_img: "/img/avatar.jpg"
 description: "Designkoncept i korta drag"
-snippet: 'Design och användbarhet hänger ihop idag! Användare har väldigt höga krav, det första intrycket spelar en mycket stor roll. "Make it pretty, please?"  
-Begreppet design inefattar många moment. Dess betydelse varierar beroende på kontext men den har haft en alltmer avgörande roll på internet.'
+snippet: "Begreppet design inefattar många moment. Dess betydelse varierar beroende på kontext men den har haft en alltmer avgörande roll på internet. Smaken för hur saker och ting skall designas på webben har förändrats en hel del sedan webbens begynnelse - så till den ringa grad att så gott som ingenting är sig likt."
 tags: ["Design", "Web"]
 ---
 
