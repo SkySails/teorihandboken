@@ -94,6 +94,10 @@ const ContentTable = styled.div`
     display: none;
   }
 
+  & > h2 {
+    margin-top: 0;
+  }
+
   ul {
     list-style: none;
     margin: 0;
