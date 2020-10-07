@@ -8,10 +8,11 @@ export default function PostLayout({ children }) {
 const PostContainer = styled.main`
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr min(80ch, 100%) 1fr;
-  grid-template-columns: 1fr min(80ch, 100%) 1fr;
+  -ms-grid-columns: 1fr min(75ch, 100%) 1fr;
+  grid-template-columns: 1fr min(75ch, 100%) 1fr;
   color: white;
-  padding-top: 2rem;
+  padding: 5rem 0;
+  position: relative;
 
   & > *:not(.full-bleed) {
     -ms-grid-column: 2;
@@ -36,53 +37,51 @@ const PostContainer = styled.main`
     opacity: 0.5;
   }
 
-  a {
+  .markdown-link {
     position: relative;
     text-decoration: none;
     color: white;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
-  }
 
-  a:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #03e5a0;
-    -webkit-transition: 350ms;
-    transition: 350ms;
-  }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #03e5a0;
+      -webkit-transition: 350ms;
+      transition: 350ms;
+    }
+    &:after {
+      content: attr(data-title);
+      -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+      color: #03e5a0;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: 350ms;
+      transition: 350ms;
+    }
+    &:hover {
+      color: transparent;
+    }
 
-  a:after {
-    content: attr(data-title);
-    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    color: #03e5a0;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: 350ms;
-    transition: 350ms;
-  }
+    &:hover:after {
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
 
-  a:hover {
-    color: transparent;
-  }
-
-  a:hover:after {
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-
-  a:hover:before {
-    -webkit-transform: translateY(-0.3em);
-    transform: translateY(-0.3em);
-    opacity: 0;
+    &:hover:before {
+      -webkit-transform: translateY(-0.3em);
+      transform: translateY(-0.3em);
+      opacity: 0;
+    }
   }
 
   p {

@@ -42,6 +42,11 @@ const Container = styled.div`
       font-weight: bold;
       opacity: 0.4;
     }
+
+    span:nth-child(2) {
+      margin-top: 5px;
+      font-size: 1.3em;
+    }
   }
 
   #half-circle {

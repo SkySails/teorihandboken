@@ -99,6 +99,7 @@ const Container = styled.main`
   }
 
   header {
+    margin-top: 10px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;

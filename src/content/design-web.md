@@ -9,16 +9,11 @@ Begreppet design inefattar många moment. Dess betydelse varierar beroende på k
 tags: ["Design", "Web"]
 ---
 
-Webben speciell när det kommer till design
+Design när det kommer till webben avser den process som äger rum då en webbplats utformas estetiskt.
 
-- Är flexibel- gör det svårt. Kan ses på många enheter och skall vara tillgänglig
+## Bakgrund
 
-Till en början skulle se utt precis likadan överallt - insåg snart att det inte var bra
-Design måste anpassas till förutsättnignar / enhet
-
-# Bakgrund
-
-## Vad är design
+### Vad är design
 
 Design kan vara komplext. Men det finns genvägar!  
  Def. "Konstnärlig formgivning gärna av bruksföremål"  
@@ -31,7 +26,7 @@ Det handlar inte bara om att skapa ett gränssnitt - det handlar om att skapa en
 
 Design ger helt enkelt ytterligare en dimension till ett företags sätt att uttrycka sig och det de står för!
 
-## Hur fungerar design för webben?
+### Hur fungerar design för webben?
 
 Låt innehållet stå som grund för designen, inte tvärtom! Att börja välja färger och typsnitt innan man vet vad innehållet kommer att bestå av är helt onödigt då båda designelement _kommer att ändras_ allteftersom designen tar form. Börja istället med design i svart-vitt för att hålla användarvänlighet och tillgänglighetanpassning på en hög nivå redan från början.
 
@@ -48,34 +43,32 @@ Alla dessa ansträngningar bidrar på sitt sätt för att designen skall:
 - Vara enklare att koppla till användares feedback kring funktionalitet snarare än subjektiv inställning till färgval, typsnitt m.m
 - Fortsätta att utvecklas genom minimering av tillfällen då man kan fastna i diskussioner
 
-## Varför skall vi lära oss detta?
+### Varför skall vi lära oss detta?
 
 Det är viktigt att ha designen i åtanke för såväl backend som frontend. I frontend gäller det att strukturera upp innehållet på ett sätt som känns intuitivt för användare. Detta innebär i sin tur att de designval som görs kommer att påverka kodens struktur, så det är viktigt att ha designen klar för sig innan man sätter igång med programmeringen om man inte tycker att det är _kul_ att göra om sitt arbete, något som en arbetsgivare kanske inte blir superlycklig över.
 
 För att strukturera/designa en databas eller annan backend-tjänst krävs det nästan att man har klart för sig när, på vilket sätt och i vilken mängd som data förväntas hämtas/levereras till frontend. För att ha koll på detta krävs det att man har en någorlunda uppfattning om hur gränssnittet kommer att se ut, annars famlar man i mörkret och bygger på gissningar.
 
-# Definitioner
+## Definitioner
 
-## Kontext
+### Kontext
 
 Omständigheter, sammanhang, omgivning eller övergripande situation
 
-# Motton
+## Motton
 
-## K.I.S.S - Keep It Simple, Stupid!
+### K.I.S.S - Keep It Simple, Stupid!
 
 Börja med de allra enklaste elementen som behövs för att sidan skall fungera. Skissa med papper och penna, och håll dig borta från färger, komplexa strukturer etc. så att du enkelt kan göra snabba ändringar utan att känna att du kastar bort tid.
 
-## Kill your darlings
+### Kill your darlings
 
 Låt inte din känsla av stolthet för en viss design vara ett hinder för att slita den i stycken och börja på nytt, om så skulle vara _nödvändigt_. Om den inte passar produktägaren, inte är praktisk eller av någon annan anledning inte fungerar i verkligheten är det viktigt att den slopas istället för att sitta i timmar och förändra detaljer i jakt på att få den att fungera.
 
-# Koncept
+## Koncept
 
-## Design
+### Design
 
-## Prototyp
+### Prototyp
 
-## Hierarki
-
-# Övning
+### Hierarki

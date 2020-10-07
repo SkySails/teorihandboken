@@ -14,7 +14,12 @@ export default function Markdown({ source }) {
           { startBlock: "[[", endBlock: "]]", inlineMode: false },
         ],
       ]}
-      renderers={{ shortcode: Shortcode, code: Highlighter, link: Linker }}
+      renderers={{
+        shortcode: Shortcode,
+        code: Highlighter,
+        link: Linker,
+        heading: HeadingRenderer,
+      }}
     />
   );
 }
@@ -27,14 +32,16 @@ const Linker = (props) => {
   let text = props.children[0].props.children;
   if (props.href.charAt(0) === "#") {
     return (
-      <a href={props.href} data-title={text}>
+      <a href={props.href} className="markdown-link" data-title={text}>
         {text}
       </a>
     );
   }
   return (
     <Link href={props.href}>
-      <a data-title={text}>{text}</a>
+      <a data-title={text} className="markdown-link">
+        {text}
+      </a>
     </Link>
   );
 };
@@ -60,3 +67,16 @@ const Shortcode = (props) => {
       throw new Error("unknown shortcode");
   }
 };
+
+function flatten(text, child) {
+  return typeof child === "string"
+    ? text + child
+    : React.Children.toArray(child.props.children).reduce(flatten, text);
+}
+
+function HeadingRenderer(props) {
+  var children = React.Children.toArray(props.children);
+  var text = children.reduce(flatten, "");
+  var slug = text.toLowerCase().replace(/\s/g, "-");
+  return React.createElement("h" + props.level, { id: slug }, props.children);
+}
