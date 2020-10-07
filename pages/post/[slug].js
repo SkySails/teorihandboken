@@ -105,10 +105,28 @@ const ContentTable = styled.div`
 
     li {
       margin: 10px 0;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background: transparent;
+        transition: 0.2s;
+      }
 
       &.is-current {
         a {
           color: #00ffc2;
+        }
+
+        &:before {
+          background: #00ffc2;
         }
       }
     }
