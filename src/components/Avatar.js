@@ -1,0 +1,68 @@
+import React, { Fragment } from "react";
+import styled from "styled-components";
+
+export default function Avatar({ name, src }) {
+  return (
+    <Container>
+      <section>
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <defs>
+            <linearGradient id="gradient" x1="1" x2="0" y1="1" y2="0">
+              <stop offset="0%" stopColor="#128CDE"></stop>
+              <stop offset="100%" stopColor="#00FFC2"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+        <Picture src={src} alt="A profile picture" className="profile" />
+        <svg id="half-circle" viewBox="0 0 106 57">
+          <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+        </svg>
+      </section>
+      <section className="data">
+        <div>
+          <span>Author</span>
+          <span>{name}</span>
+        </div>
+      </section>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .data > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    span:nth-child(1) {
+      font-weight: bold;
+      opacity: 0.4;
+    }
+  }
+
+  #half-circle {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 75px;
+    height: 51px;
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    pointer-events: none;
+  }
+`;
+
+const Picture = styled.img`
+  border-radius: 50%;
+  width: 55px;
+  height: 55px !important;
+  display: block;
+  overflow: hidden;
+  margin: 10px 10px;
+`;

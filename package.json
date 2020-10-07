@@ -1,0 +1,25 @@
+{
+  "name": "teorihandboken",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "moment": "^2.29.1",
+    "next": "9.5.3",
+    "prism-react-renderer": "^1.1.1",
+    "prismjs": "^1.21.0",
+    "raw-loader": "^4.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-markdown": "^4.3.1",
+    "react-moment": "^1.0.0",
+    "remark-shortcodes": "^0.3.1",
+    "sass": "^1.26.12",
+    "styled-components": "^5.2.0"
+  }
+}
