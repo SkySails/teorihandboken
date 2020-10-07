@@ -80,6 +80,9 @@ PostTemplate.getInitialProps = async (context) => {
 
 const Intro = styled.div`
   margin-bottom: 0em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const ContentTable = styled.div`
