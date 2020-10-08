@@ -9,6 +9,9 @@ import Arrow from "../src/icons/Arrow";
 export default function Home({ posts }) {
   return (
     <Container>
+      <Head>
+        <title>Startsida</title>
+      </Head>
       <h1>Blogginlägg</h1>
       {posts.map(
         ({
