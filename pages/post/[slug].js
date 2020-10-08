@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import matter from "gray-matter";
 import Moment from "react-moment";
 import PostLayout from "../../src/layout/PostLayout";
@@ -34,6 +35,11 @@ export default function PostTemplate({ content, data }) {
 
   return (
     <PostLayout>
+      <Head>
+        <title>
+          {data.title} | {data.author}
+        </title>
+      </Head>
       <ScrollProgress>
         <div id="bar" />
       </ScrollProgress>
