@@ -46,7 +46,7 @@ export default function PostTemplate({ content, data }) {
       <Fader />
       <HomeButton />
       <Intro id="intro">
-        <Moment format="MMMM M, YYYY">{data.date}</Moment>
+        <Moment format="MMMM D, YYYY">{data.date}</Moment>
         <h1 className="post-subject">{data.title}</h1>
         <Avatar name={data.author} src={data.author_img} />
       </Intro>
