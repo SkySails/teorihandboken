@@ -10,7 +10,7 @@ import Scrollspy from "react-scrollspy";
 import HomeButton from "../../src/components/HomeButton";
 import Fader from "../../src/components/Fader";
 
-export default function PostTemplate({ content, data }) {
+export default function PostTemplate({ content, data, slug }) {
   const [headings, setHeadings] = useState(undefined);
   useEffect(() => {
     setHeadings(
@@ -39,6 +39,12 @@ export default function PostTemplate({ content, data }) {
         <title>
           {data.title} | {data.author}
         </title>
+        <meta name="author" content={data.author} />
+        <meta name="description" content="Brief description" />
+        <meta property="og:title" content={data.title} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:url" content={`/post/${slug}`} />
+        <meta property="og:site_name" content="Malte Hallström's Blog" />
       </Head>
       <ScrollProgress>
         <div id="bar" />
@@ -81,7 +87,7 @@ PostTemplate.getInitialProps = async (context) => {
   const content = await import(`../../src/content/${slug}.md`);
   const data = matter(content.default);
 
-  return { ...data };
+  return { ...data, slug };
 };
 
 const Intro = styled.div`
