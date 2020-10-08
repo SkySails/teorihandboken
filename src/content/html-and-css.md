@@ -9,6 +9,8 @@ architecto placeat corporis corrupti expedita ducimus rerum magni rem
 maxime accusantium blanditiis tempore itaque repellat, iste nemo
 reprehenderit nobis atque? Quisquam saepe modi ad, voluptate accusantium'
 tags: ["HTML", "CSS"]
+img: https://joshwcomeau.com/images/full-bleed/meerkat.jpg
+img_alt: "Meerkat"
 ---
 
 Lorem ipsum dolor sit amet,

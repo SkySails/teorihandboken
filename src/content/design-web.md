@@ -3,9 +3,11 @@ title: "Design för webben"
 date: "2020-10-07"
 author: "Malte Hallström"
 author_img: "/img/avatar.jpg"
-description: "Designkoncept i korta drag"
+description: "Vi talar om designprocessen för web och dess användarvänlighet."
 snippet: "Begreppet design inefattar många moment. Dess betydelse varierar beroende på kontext men den har haft en alltmer avgörande roll på internet. Smaken för hur saker och ting skall designas på webben har förändrats en hel del sedan webbens begynnelse - så till den ringa grad att så gott som ingenting är sig likt."
 tags: ["Design", "Web"]
+img: https://www.butterfly.com.au/sites/default/files/images/blog/UIDesign/old-websites.jpg
+img_alt: "Old web designs"
 ---
 
 ## Inledning
