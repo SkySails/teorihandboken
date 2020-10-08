@@ -138,7 +138,7 @@ const ContentTable = styled.div`
       margin: 10px 0;
       position: relative;
 
-      &:before {
+      /* &:before {
         content: "";
         position: absolute;
         top: 50%;
@@ -149,7 +149,7 @@ const ContentTable = styled.div`
         border-radius: 5px;
         background: transparent;
         transition: 0.2s;
-      }
+      } */
 
       &.is-current {
         a {
@@ -157,7 +157,7 @@ const ContentTable = styled.div`
         }
 
         &:before {
-          background: #00ffc2;
+          /* background: #00ffc2; */
         }
       }
     }
