@@ -40,11 +40,13 @@ export default function PostTemplate({ content, data, slug }) {
           {data.title} | {data.author}
         </title>
         <meta name="author" content={data.author} />
-        <meta name="description" content="Brief description" />
+        <meta name="description" content={data.description} />
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:url" content={`/post/${slug}`} />
         <meta property="og:site_name" content="Malte Hallström's Blog" />
+        <meta property="og:image" content={data.img} />
+        <meta name="twitter:card" content={data.img_alt} />
       </Head>
       <ScrollProgress>
         <div id="bar" />
