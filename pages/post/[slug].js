@@ -121,7 +121,7 @@ const ContentTable = styled.div`
   position: fixed;
   left: 20px;
 
-  @media (max-width: 1110px) {
+  @media (max-width: 1400px) {
     display: none;
   }
 
