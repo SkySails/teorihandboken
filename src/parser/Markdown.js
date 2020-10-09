@@ -19,6 +19,7 @@ export default function Markdown({ source }) {
         code: Highlighter,
         link: Linker,
         heading: HeadingRenderer,
+        list: ListRenderer,
       }}
     />
   );
@@ -84,5 +85,13 @@ function HeadingRenderer(props) {
   var children = React.Children.toArray(props.children);
   var text = children.reduce(flatten, "");
   var slug = text.toLowerCase().replace(/\s/g, "-");
-  return React.createElement("h" + props.level, { id: slug }, props.children);
+  return React.createElement(
+    "h" + props.level,
+    { id: slug, className: "content-header" },
+    props.children
+  );
+}
+
+function ListRenderer({ children }) {
+  return <ul className="content-list">{children}</ul>;
 }
