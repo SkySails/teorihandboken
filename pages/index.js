@@ -14,10 +14,7 @@ export default function Home({ posts }) {
       </Head>
       <h1>Blogginlägg</h1>
       {posts.map(
-        ({
-          frontmatter: { title, description, date, snippet, tags },
-          slug,
-        }) => (
+        ({ metadata: { title, description, date, snippet, tags }, slug }) => (
           <Link href={`/post/[slug]`} as={`/post/${slug}`} key={title}>
             <article>
               <time>Posted {date}</time>
@@ -34,12 +31,7 @@ export default function Home({ posts }) {
                   </div>
                 </div>
               </header>
-              <section>
-                <p>{snippet}</p>
-              </section>
-              <a>
-                Läs mer <StyledArrow />
-              </a>
+              <p className="post-snippet">{snippet}</p>
             </article>
           </Link>
         )
@@ -56,40 +48,6 @@ const Container = styled.main`
   color: white;
   padding-top: 2rem;
 
-  article {
-    margin: 20px 0;
-    padding: 0 20px;
-
-    &:hover {
-      cursor: pointer;
-      & h2 {
-        color: #00ffc2;
-      }
-    }
-
-    time {
-      opacity: 0.3;
-    }
-  }
-
-  .tags {
-    display: flex;
-    align-items: center;
-    margin: -5px;
-    margin-top: 5px;
-
-    .tag {
-      padding: 5px 10px;
-      background: linear-gradient(90deg, #128cde 0%, #00ffc2 250%);
-      border-radius: 20px;
-      font-size: 0.7em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 5px;
-    }
-  }
-
   & > * {
     -ms-grid-column: 2;
     grid-column: 2;
@@ -102,32 +60,52 @@ const Container = styled.main`
     margin: 0;
   }
 
-  header {
-    margin-top: 10px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
+  article {
+    padding: 20px;
+    border-radius: 10px;
+    transition: background 0.2s;
 
-  a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    font-size: 1.1em;
-  }
-`;
+    &:hover {
+      cursor: pointer;
+      background: #151d26;
+      & h2 {
+        color: #00ffc2;
+      }
+    }
 
-const StyledArrow = styled(Arrow)`
-  width: 25px;
-  margin-left: -20px;
-  opacity: 0;
-  transition: 150ms;
+    time {
+      opacity: 0.3;
+    }
 
-  ${Container} article:hover & {
-    margin-left: 10px;
-    opacity: 1;
+    header {
+      margin-top: 10px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .tags {
+      display: flex;
+      align-items: center;
+      margin: -5px;
+      margin-top: 5px;
+
+      .tag {
+        padding: 5px 10px;
+        background: linear-gradient(90deg, #128cde 0%, #00ffc2 250%);
+        border-radius: 20px;
+        font-size: 0.7em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+      }
+    }
+
+    .post-snippet {
+      line-height: 1.4em;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -143,14 +121,14 @@ export async function getStaticProps() {
 
     const formattedDate = moment(data.date).format("MMMM M, YYYY");
 
-    const frontmatter = {
+    const metadata = {
       ...data,
       date: formattedDate,
     };
 
     return {
       slug: filename.replace(".md", ""),
-      frontmatter,
+      metadata,
     };
   });
 
