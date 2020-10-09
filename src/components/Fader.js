@@ -6,7 +6,7 @@ export default function Fader() {
 }
 
 const FadeContainer = styled.div`
-  height: 10%;
+  height: 7%;
   width: 100vw;
   position: fixed;
   top: 0;
