@@ -33,4 +33,8 @@ const StyledAnchor = styled.a`
   &:hover {
     color: #00ffc2;
   }
+
+  &:focus {
+    background: red;
+  }
 `;
