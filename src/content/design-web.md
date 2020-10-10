@@ -14,7 +14,7 @@ img_alt: "Old web designs"
 
 När det kommer till webbsammanhang avser begreppet design den arbetsprocess då en webbplats tar form rent grafiskt. Processen går till exempel ut på att bestämma storlekar, placering, [typografi](https://en.wikipedia.org/wiki/Typography), färgskalor, ikoner och logotyper, men kan sträcka sig till så gott som allt som _syns_ på en hemsida. I denna sektion fördjupar vi oss i webbdesignens historia, arbetsgång, definitioner och koncept.
 
-[[ full-bleed src="https://bottomlinewebdesign.ca/wp-content/uploads/2019/11/Vancouver-Web-Design-Mockup-Sample.png" maxWidth="1000px" ]]
+[[ full-bleed src="https://bottomlinewebdesign.ca/wp-content/uploads/2019/11/Vancouver-Web-Design-Mockup-Sample.png" maxWidth="1000px" alt="A collection of cool designs." ]]
 
 ## Vad är design? 💅
 
@@ -22,7 +22,7 @@ En definition kan sägas vara "Konstnärlig formgivning gärna av bruksföremål
 
 Begreppet design inefattar många moment. Dess betydelse varierar beroende på kontext men den har haft en alltmer avgörande roll på internet. Smaken för hur saker och ting skall designas på webben har förändrats en hel del sedan webbens begynnelse - så till den ringa grad att så gott som ingenting är sig likt. Trender inom färger, designelement, typsnitt och layout kommer och går, vissa snabbare än andra.
 
-[[ full-bleed src="https://www.butterfly.com.au/sites/default/files/images/blog/UIDesign/old-websites.jpg" maxWidth="1000px" preserveRatio="true" ]]
+[[ full-bleed src="https://www.butterfly.com.au/sites/default/files/images/blog/UIDesign/old-websites.jpg" maxWidth="1000px" preserveRatio="true" alt="A collage of not-so-cool (old) designs" ]]
 
 ## Designens betydelse 🤔
 
@@ -40,7 +40,7 @@ Detta exempelvis för att det kan vara svårt att veta vad som kommer att behöv
 
 Börja med enkla skisser och håll det enkelt. Designen kommer sedan att genomgå många iterationer av färgsättning, val av typsnitt, designelement osv men det är viktigt att komma ihåg att detta inte tillhör den tidiga processen i en design.
 
-[[ full-bleed src="https://cdn.artandlogic.com/wp-content/uploads/PROGRESSION.jpg" maxWidth="1000px" ]]
+[[ full-bleed src="https://cdn.artandlogic.com/wp-content/uploads/PROGRESSION.jpg" maxWidth="1000px" alt="A step-by-step image showing the process of a design from sketch to wireframe to prototype to development." ]]
 
 Se till att testa designen, kanske rentav fysiskt med hjälp av pappersbitar. Detta återigen för att minska antalet timmar spenderade på att implementera funktionalitet som inte ens fungerar!
 
