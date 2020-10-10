@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import moment from "moment";
 import styled from "styled-components";
 import Link from "next/link";
-import Arrow from "../src/icons/Arrow";
+import Search from "../src/components/Search";
 
 export default function Home({ posts }) {
   return (
@@ -12,6 +12,7 @@ export default function Home({ posts }) {
       <Head>
         <title>Startsida</title>
       </Head>
+      <Search />
       <h1>Blogginlägg</h1>
       {posts.map(
         ({ metadata: { title, description, date, snippet, tags }, slug }) => (
