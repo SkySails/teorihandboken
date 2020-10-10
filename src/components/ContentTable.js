@@ -7,7 +7,12 @@ export default function ContentTable({ headings }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth > 1200) setIsOpen(true);
+    function toggleCT() {
+      window.innerWidth > 1200 ? setIsOpen(true) : setIsOpen(false);
+    }
+
+    window.addEventListener("resize", toggleCT);
+    return () => window.removeEventListener("resize", toggleCT);
   }, []);
 
   return (
@@ -40,11 +45,12 @@ const ToggleButton = styled.button`
   border-left: 2px solid var(--bg-color);
   position: absolute;
   top: 10px;
-  right: -2px;
+  right: 0;
   transform: translateX(100%);
   border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-left: 2px solid var(--bg-color);
   height: 40px;
   width: 45px;
   padding-right: 10px;
@@ -60,7 +66,7 @@ const Container = styled.div`
   top: 50%;
   transform: translateY(-50%) ${(props) => !props.isOpen && "translateX(-100%)"};
   transition: transform 350ms;
-  background: var(--bg-color);
+  z-index: 999;
 
   /* @media (max-width: 1250px) {
     display: none;
@@ -78,9 +84,10 @@ const Container = styled.div`
     padding-left: 15px;
     border: 3px solid #00ffc2;
     border-left: none;
-    background: #0f151c;
+    background: var(--bg-color);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    overflow: hidden;
 
     li {
       margin: 15px 0;
