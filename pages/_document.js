@@ -30,7 +30,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="se">
         <Head>
           <link
             rel="apple-touch-icon"
