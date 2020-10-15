@@ -121,7 +121,6 @@ const Result = styled.li`
   border: 1px solid white;
   border-radius: 7px;
   cursor: pointer;
-  max-height: 15vh;
   width: 80vw;
   max-width: 300px;
 
