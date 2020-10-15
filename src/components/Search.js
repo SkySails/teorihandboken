@@ -93,7 +93,7 @@ const SearchContainer = styled.div`
   z-index: 9999;
 
   input {
-    max-width: 300px;
+    max-width: 180px;
     padding: 7px 10px;
     font-size: 1.3em;
     background: transparent;
