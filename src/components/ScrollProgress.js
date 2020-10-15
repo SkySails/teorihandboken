@@ -24,10 +24,11 @@ export default function ScrollProgress() {
 }
 
 const Container = styled.div`
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  right: 0;
   height: 4px;
   padding: 0 !important;
   z-index: 9999;
