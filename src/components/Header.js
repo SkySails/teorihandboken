@@ -2,15 +2,17 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import Search from "./Search";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
     <Container>
       <Link href="/">
         <a>
-          <h2 id="logo">Awesome Blog</h2>
+          <img src="/img/logo.png" />
         </a>
       </Link>
+      <ThemeToggle />
       <Search />
     </Container>
   );
@@ -18,7 +20,7 @@ export default function Header() {
 
 const Container = styled.header`
   grid-area: Header;
-  background: var(--bg-color);
+  background: var(--bg-primary);
   height: 5rem;
   padding: 0 2em;
   color: white;
@@ -32,6 +34,13 @@ const Container = styled.header`
   right: 0;
   z-index: 998;
 
+  a {
+    height: 70%;
+    img {
+      height: 100%;
+    }
+  }
+
   &:after {
     content: "";
     height: 7vh;
@@ -40,18 +49,10 @@ const Container = styled.header`
     position: absolute;
     bottom: 2px;
     transform: translateY(100%);
-    background: linear-gradient(180deg, #0f151c 10%, #0f151c00 100%);
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--bg-contrast);
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  #search {
+    background: linear-gradient(
+      180deg,
+      var(--bg-primary) 10%,
+      var(--bg-transparent) 100%
+    );
   }
 `;
