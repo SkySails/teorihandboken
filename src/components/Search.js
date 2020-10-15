@@ -1,12 +1,14 @@
 import Link from "next/link";
-import React, { Fragment, useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 export default function Search() {
   const searchRef = useRef(null);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
+  const Router = useRouter();
 
   const searchEndpoint = (query) => `/api/search?q=${query}`;
 
@@ -29,18 +31,31 @@ export default function Search() {
     window.addEventListener("click", onClick);
   }, []);
 
-  const onClick = useCallback((event) => {
-    if (searchRef.current && !searchRef.current.contains(event.target)) {
+  const onClick = useCallback((event, bypass) => {
+    if (
+      (searchRef.current && !searchRef.current.contains(event.target)) ||
+      bypass
+    ) {
       setActive(false);
       window.removeEventListener("click", onClick);
+      if (bypass) setQuery("");
     }
   }, []);
 
   return (
-    <SearchContainer ref={searchRef}>
+    <SearchContainer ref={searchRef} id="search">
       <input
         onChange={onChange}
         onFocus={onFocus}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            Router.push("/post/[slug]", `/post/${results[0].slug}`);
+            setQuery("");
+            searchRef.current.querySelector("input").blur();
+            setActive(false);
+            window.removeEventListener("click", onClick);
+          }
+        }}
         placeholder={"Sök inlägg"}
         type="search"
         value={query}
@@ -48,9 +63,8 @@ export default function Search() {
       {active && results.length > 0 && (
         <ul>
           {results.map(({ slug, title, description }) => {
-            console.log(description);
             return (
-              <Result key={slug}>
+              <Result key={slug} onClick={(e) => onClick(e, true)}>
                 <Link href="/post/[slug]" as={`/post/${slug}`} passHref>
                   <a>
                     <h3>{title}</h3>
@@ -67,23 +81,36 @@ export default function Search() {
 }
 
 const SearchContainer = styled.div`
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  max-width: 300px;
+  position: relative;
+  background: var(--bg-color);
+  z-index: 9999;
 
   input {
-    padding: 10px 15px;
-    font-size: 1.5em;
-    border-radius: 5px;
+    max-width: 300px;
+    padding: 7px 10px;
+    font-size: 1.3em;
     background: rgba(255, 255, 255, 0.1);
     border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -webkit-appearance: none;
     color: white;
+    width: 100%;
+    outline: none;
+    transition: 0.2s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px #00ffc2;
+    }
   }
 
   ul {
     list-style: none;
-    padding: 0;
+    padding: 15px;
+    position: absolute;
+    border-radius: 10px;
+    right: 0;
+    background: var(--bg-menu);
   }
 `;
 
@@ -94,11 +121,14 @@ const Result = styled.li`
   border: 1px solid white;
   border-radius: 7px;
   cursor: pointer;
+  max-height: 15vh;
+  width: 80vw;
+  max-width: 300px;
 
   a {
     font-weight: bold;
     margin-bottom: 8px;
-    color: white;
+    color: inherit;
     text-decoration: none;
 
     h3 {
@@ -109,13 +139,14 @@ const Result = styled.li`
     span {
       opacity: 0.6;
     }
+  }
 
-    &:hover {
-      color: #00ffc2;
+  &:hover {
+    color: #00ffc2;
+    border: 1px solid #00ffc2;
 
-      h3 {
-        text-decoration: underline;
-      }
+    h3 {
+      text-decoration: underline;
     }
   }
 
