@@ -10,7 +10,7 @@ export default function Home({ posts }) {
   return (
     <Container>
       <Head>
-        <title>Startsida</title>
+        <title>Startsida | Awesome Blog</title>
       </Head>
       <Header />
       <Content>
