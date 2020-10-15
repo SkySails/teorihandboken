@@ -35,7 +35,7 @@ const Container = styled.div`
 
   #bar {
     height: 100%;
-    background: #00ffc2;
+    background: var(--primary-color);
     width: 0%;
   }
 `;

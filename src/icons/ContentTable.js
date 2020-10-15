@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Arrow({ className, color }) {
-  color = color || "#00ffc2";
+  color = color || "var(--primary-color)";
 
   return (
     <svg

@@ -85,7 +85,7 @@ const Content = styled.main`
       cursor: pointer;
       background: #151d26;
       & h2 {
-        color: #00ffc2;
+        color: var(--primary-color);
       }
     }
 
@@ -108,7 +108,11 @@ const Content = styled.main`
 
       .tag {
         padding: 5px 10px;
-        background: linear-gradient(90deg, #128cde 0%, #00ffc2 250%);
+        background: linear-gradient(
+          90deg,
+          #128cde 0%,
+          var(--primary-color) 250%
+        );
         border-radius: 20px;
         font-size: 0.7em;
         display: flex;

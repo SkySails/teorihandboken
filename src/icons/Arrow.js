@@ -21,7 +21,7 @@ export default function Arrow({ className }) {
             d="M2314.549,727h26.846"
             transform="translate(-1990)"
             fill="none"
-            stroke="#00ffc2"
+            stroke="var(--primary-color)"
             strokeLinecap="round"
             strokeWidth="2"
           />
@@ -31,7 +31,7 @@ export default function Arrow({ className }) {
             d="M2341.08,719.1l6.06,6.06-6.06,6.06"
             transform="translate(-1995.361 1.914)"
             fill="none"
-            stroke="#00ffc2"
+            stroke="var(--primary-color)"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"

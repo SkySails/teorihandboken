@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { MagicScriptTag } from "../src/theme/inlineCSSVariables";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -55,6 +56,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
+          <MagicScriptTag />
           <Main />
           <NextScript />
         </body>

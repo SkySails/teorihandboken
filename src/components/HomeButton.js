@@ -14,7 +14,7 @@ export default function HomeButton() {
 }
 
 const StyledArrow = styled(Arrow)`
-  width: 25px;
+  width: 30px;
   margin-right: 10px;
   transition: 150ms;
   transform: rotate(180deg);
@@ -22,19 +22,19 @@ const StyledArrow = styled(Arrow)`
 
 const StyledAnchor = styled.a`
   text-decoration: none;
-  color: white;
+  color: var(--bg-contrast);
   font-size: 1.2em;
   display: flex;
   align-items: center;
   position: relative;
   margin-bottom: 20px;
   cursor: pointer;
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   padding: 15px;
   border-radius: 5px;
 
   &:hover {
-    color: #00ffc2;
+    color: var(--primary-color);
   }
 
   &:focus {
