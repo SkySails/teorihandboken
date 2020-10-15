@@ -6,7 +6,7 @@ import Arrow from "../icons/Arrow";
 export default function HomeButton() {
   return (
     <Link href="/">
-      <StyledAnchor>
+      <StyledAnchor tabIndex="0">
         <StyledArrow /> Tillbaka till startsidan
       </StyledAnchor>
     </Link>
@@ -38,6 +38,6 @@ const StyledAnchor = styled.a`
   }
 
   &:focus {
-    background: red;
+    box-shadow: 0 0 0 4px var(--primary-color);
   }
 `;

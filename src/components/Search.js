@@ -89,7 +89,6 @@ export default function Search() {
 
 const SearchContainer = styled.div`
   position: relative;
-  background: var(--bg-primary);
   z-index: 9999;
 
   input {

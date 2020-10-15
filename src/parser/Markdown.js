@@ -33,14 +33,18 @@ const Linker = (props) => {
   let text = props.children[0].props.children;
   if (props.href.charAt(0) === "#") {
     return (
-      <a href={props.href} className="markdown-link" data-title={text}>
+      <a
+        href={props.href}
+        className="markdown-link transition-color"
+        data-title={text}
+      >
         {text}
       </a>
     );
   }
   return (
     <Link href={props.href}>
-      <a data-title={text} className="markdown-link">
+      <a data-title={text} className="markdown-link transition-color">
         {text}
       </a>
     </Link>

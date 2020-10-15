@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap");
 
+$bezier: 0.2s cubic-bezier(0.89, 0.01, 0.09, 1);
+
 html,
 body {
   padding: 0;
@@ -8,6 +10,20 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: var(--bg-primary);
   scroll-behavior: smooth;
+  transition: background $bezier;
+}
+
+.transition-bg {
+  transition: background $bezier;
+}
+
+.transition-svg {
+  stop {
+    transition: $bezier;
+  }
+}
+.transition-color {
+  transition: color $bezier;
 }
 
 * {
@@ -25,8 +41,8 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #0f151c;
-  border-left: 1px solid #01251d;
+  background: var(--bg-primary);
+  border-left: 1px solid #0f131230;
 }
 
 /* Handle */
