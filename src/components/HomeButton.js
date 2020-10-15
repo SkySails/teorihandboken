@@ -29,6 +29,9 @@ const StyledAnchor = styled.a`
   position: relative;
   margin-bottom: 20px;
   cursor: pointer;
+  border: 1px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 5px;
 
   &:hover {
     color: #00ffc2;

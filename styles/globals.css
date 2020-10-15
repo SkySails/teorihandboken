@@ -17,6 +17,8 @@ body {
 :root {
   --primary-color: #00ffc2;
   --bg-color: #0f151c;
+  --bg-menu: #262e32;
+  --bg-contrast: white;
 }
 
 /* width */

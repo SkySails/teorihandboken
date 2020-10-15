@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "fuzzy-search": "^3.2.1",
     "gray-matter": "^4.0.2",
     "marked": "^1.2.0",
     "moment": "^2.29.1",

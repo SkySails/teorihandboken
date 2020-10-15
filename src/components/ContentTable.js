@@ -3,11 +3,19 @@ import Scrollspy from "react-scrollspy";
 import styled from "styled-components";
 import ContentTableIcon from "../icons/ContentTable";
 
-export default function ContentTable({ headings }) {
+export default function ContentTable({ slug }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [headings, setHeadings] = useState(undefined);
+
+  // Parse page for headings and create an array with references
+  useEffect(() => {
+    setHeadings(
+      Array.from(document.querySelector("main").querySelectorAll("h2"))
+    );
+  }, [slug]);
 
   useEffect(() => {
-    if (window.innerWidth > 1200) setIsOpen(true);
+    window.innerWidth > 1200 ? setIsOpen(true) : setIsOpen(false);
   }, []);
 
   return (
@@ -16,21 +24,24 @@ export default function ContentTable({ headings }) {
         <ContentTableIcon color="var(--bg-color)" />
       </ToggleButton>
 
-      <Scrollspy
-        items={headings.map((h) => h.id)}
-        currentClassName="is-current"
-      >
-        <h2 style={{ marginBottom: 20 }}>Innehåll</h2>
-        {headings.map((h) => (
-          <li
-            key={h.id}
-            className={parseInt(h.tagName.charAt(1)) === 2 && "heading"}
-            style={{ marginLeft: (parseInt(h.tagName.charAt(1)) - 2) * 10 }}
-          >
-            <a href={`#${h.id}`}>{h.innerText}</a>
-          </li>
-        ))}
-      </Scrollspy>
+      {headings && (
+        <Scrollspy
+          items={headings.map((h) => h.id)}
+          currentClassName="is-current"
+          offset={-200}
+        >
+          <h2 style={{ marginBottom: 20 }}>Innehåll</h2>
+          {headings.map((h) => (
+            <li
+              key={h.id}
+              className={parseInt(h.tagName.charAt(1)) === 2 && "heading"}
+              style={{ marginLeft: (parseInt(h.tagName.charAt(1)) - 2) * 10 }}
+            >
+              <a href={`#${h.id}`}>{h.innerText}</a>
+            </li>
+          ))}
+        </Scrollspy>
+      )}
     </Container>
   );
 }
@@ -40,11 +51,12 @@ const ToggleButton = styled.button`
   border-left: 2px solid var(--bg-color);
   position: absolute;
   top: 10px;
-  right: -2px;
+  right: 0;
   transform: translateX(100%);
   border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-left: 2px solid var(--bg-color);
   height: 40px;
   width: 45px;
   padding-right: 10px;
@@ -60,7 +72,7 @@ const Container = styled.div`
   top: 50%;
   transform: translateY(-50%) ${(props) => !props.isOpen && "translateX(-100%)"};
   transition: transform 350ms;
-  background: var(--bg-color);
+  z-index: 999;
 
   /* @media (max-width: 1250px) {
     display: none;
@@ -69,6 +81,7 @@ const Container = styled.div`
   h2 {
     margin-top: 0;
     font-size: 1.8em;
+    color: white;
   }
 
   ul {
@@ -78,9 +91,10 @@ const Container = styled.div`
     padding-left: 15px;
     border: 3px solid #00ffc2;
     border-left: none;
-    background: #0f151c;
+    background: var(--bg-color);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    overflow: hidden;
 
     li {
       margin: 15px 0;
