@@ -20,4 +20,12 @@ const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  grid-column: 2;
+
+  h1 {
+    margin-top: 10px;
+    font-size: 4em;
+    font-weight: black;
+    margin-bottom: 0;
+  }
 `;
