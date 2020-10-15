@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { useColorScheme } from "../context/ThemeContext";
 
 export default function Search() {
   const searchRef = useRef(null);
@@ -11,6 +12,8 @@ export default function Search() {
   const Router = useRouter();
 
   const searchEndpoint = (query) => `/api/search?q=${query}`;
+
+  const { colorScheme } = useColorScheme();
 
   const onChange = useCallback((event) => {
     const query = event.target.value;
@@ -64,7 +67,11 @@ export default function Search() {
         <ul>
           {results.map(({ slug, title, description }) => {
             return (
-              <Result key={slug} onClick={(e) => onClick(e, true)}>
+              <Result
+                key={slug}
+                onClick={(e) => onClick(e, true)}
+                theme={colorScheme}
+              >
                 <Link href="/post/[slug]" as={`/post/${slug}`} passHref>
                   <a>
                     <h3>{title}</h3>
@@ -82,26 +89,22 @@ export default function Search() {
 
 const SearchContainer = styled.div`
   position: relative;
-  background: var(--bg-color);
+  background: var(--bg-primary);
   z-index: 9999;
 
   input {
-    max-width: 300px;
+    max-width: 180px;
     padding: 7px 10px;
     font-size: 1.3em;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     border: none;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -webkit-appearance: none;
-    color: white;
+    color: var(--bg-contrast);
     width: 100%;
     outline: none;
     transition: 0.2s;
-
-    &:focus {
-      box-shadow: 0 0 0 2px #00ffc2;
-    }
   }
 
   ul {
@@ -110,7 +113,7 @@ const SearchContainer = styled.div`
     position: absolute;
     border-radius: 10px;
     right: 0;
-    background: var(--bg-menu);
+    background: var(--bg-search);
   }
 `;
 
@@ -121,9 +124,10 @@ const Result = styled.li`
   border: 1px solid white;
   border-radius: 7px;
   cursor: pointer;
-  max-height: 15vh;
   width: 80vw;
   max-width: 300px;
+  color: var(--bg-contrast);
+  background: ${(props) => (props.theme === "dark" ? "transparent" : "white")};
 
   a {
     font-weight: bold;
@@ -142,8 +146,8 @@ const Result = styled.li`
   }
 
   &:hover {
-    color: #00ffc2;
-    border: 1px solid #00ffc2;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 
     h3 {
       text-decoration: underline;
@@ -151,7 +155,7 @@ const Result = styled.li`
   }
 
   &:first-child {
-    border: 1px solid #00ffc2;
+    border: 1px solid var(--primary-color);
   }
 
   &:not(:first-child) {

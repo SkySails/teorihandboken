@@ -37,7 +37,7 @@ const Post = styled.main`
   display: grid;
   -ms-grid-columns: 1fr min(75ch, 100%) 1fr;
   grid-template-columns: 1fr min(75ch, 100%) 1fr;
-  color: white;
+  color: var(--bg-contrast);
   padding: 3rem 0;
   position: relative;
 
@@ -71,7 +71,7 @@ const Post = styled.main`
   .markdown-link {
     position: relative;
     text-decoration: none;
-    color: white;
+    color: var(--bg-contrast);
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 
@@ -121,7 +121,8 @@ const Post = styled.main`
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     line-height: 1.6em;
     font-size: 1.2em;
-    color: #e5e5e5;
+    color: var(--bg-contrast);
+    opacity: 0.9;
   }
 
   /* Magical full-bleed image container  */

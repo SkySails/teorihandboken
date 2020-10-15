@@ -21,7 +21,7 @@ export default function ContentTable({ slug }) {
   return (
     <Container isOpen={isOpen}>
       <ToggleButton onClick={() => setIsOpen(!isOpen)}>
-        <ContentTableIcon color="var(--bg-color)" />
+        <ContentTableIcon color="var(--bg-primary)" />
       </ToggleButton>
 
       {headings && (
@@ -48,7 +48,6 @@ export default function ContentTable({ slug }) {
 
 const ToggleButton = styled.button`
   background: var(--primary-color);
-  border-left: 2px solid var(--bg-color);
   position: absolute;
   top: 10px;
   right: 0;
@@ -56,7 +55,6 @@ const ToggleButton = styled.button`
   border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-left: 2px solid var(--bg-color);
   height: 40px;
   width: 45px;
   padding-right: 10px;
@@ -73,6 +71,7 @@ const Container = styled.div`
   transform: translateY(-50%) ${(props) => !props.isOpen && "translateX(-100%)"};
   transition: transform 350ms;
   z-index: 999;
+  color: var(--bg-contrast);
 
   /* @media (max-width: 1250px) {
     display: none;
@@ -81,7 +80,7 @@ const Container = styled.div`
   h2 {
     margin-top: 0;
     font-size: 1.8em;
-    color: white;
+    color: inherit;
   }
 
   ul {
@@ -89,9 +88,9 @@ const Container = styled.div`
     margin: 0;
     padding: 20px 15px !important;
     padding-left: 15px;
-    border: 3px solid #00ffc2;
+    border: 3px solid var(--primary-color);
     border-left: none;
-    background: var(--bg-color);
+    background: var(--bg-primary);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow: hidden;
@@ -102,18 +101,18 @@ const Container = styled.div`
 
       &.is-current {
         a {
-          color: #00ffc2;
+          color: var(--primary-color);
         }
       }
     }
 
     a {
-      color: white;
+      color: inherit;
       text-decoration: none;
       font-size: 1.1em;
 
       &:hover {
-        color: #00ffc2;
+        color: var(--primary-color);
       }
     }
   }
