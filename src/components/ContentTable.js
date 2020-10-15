@@ -3,16 +3,19 @@ import Scrollspy from "react-scrollspy";
 import styled from "styled-components";
 import ContentTableIcon from "../icons/ContentTable";
 
-export default function ContentTable({ headings }) {
+export default function ContentTable({ slug }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [headings, setHeadings] = useState(undefined);
+
+  // Parse page for headings and create an array with references
+  useEffect(() => {
+    setHeadings(
+      Array.from(document.querySelector("main").querySelectorAll("h2"))
+    );
+  }, [slug]);
 
   useEffect(() => {
-    function toggleCT() {
-      window.innerWidth > 1200 ? setIsOpen(true) : setIsOpen(false);
-    }
-
-    window.addEventListener("resize", toggleCT);
-    return () => window.removeEventListener("resize", toggleCT);
+    window.innerWidth > 1200 ? setIsOpen(true) : setIsOpen(false);
   }, []);
 
   return (
@@ -21,21 +24,24 @@ export default function ContentTable({ headings }) {
         <ContentTableIcon color="var(--bg-color)" />
       </ToggleButton>
 
-      <Scrollspy
-        items={headings.map((h) => h.id)}
-        currentClassName="is-current"
-      >
-        <h2 style={{ marginBottom: 20 }}>Innehåll</h2>
-        {headings.map((h) => (
-          <li
-            key={h.id}
-            className={parseInt(h.tagName.charAt(1)) === 2 && "heading"}
-            style={{ marginLeft: (parseInt(h.tagName.charAt(1)) - 2) * 10 }}
-          >
-            <a href={`#${h.id}`}>{h.innerText}</a>
-          </li>
-        ))}
-      </Scrollspy>
+      {headings && (
+        <Scrollspy
+          items={headings.map((h) => h.id)}
+          currentClassName="is-current"
+          offset={-200}
+        >
+          <h2 style={{ marginBottom: 20 }}>Innehåll</h2>
+          {headings.map((h) => (
+            <li
+              key={h.id}
+              className={parseInt(h.tagName.charAt(1)) === 2 && "heading"}
+              style={{ marginLeft: (parseInt(h.tagName.charAt(1)) - 2) * 10 }}
+            >
+              <a href={`#${h.id}`}>{h.innerText}</a>
+            </li>
+          ))}
+        </Scrollspy>
+      )}
     </Container>
   );
 }
@@ -75,6 +81,7 @@ const Container = styled.div`
   h2 {
     margin-top: 0;
     font-size: 1.8em;
+    color: white;
   }
 
   ul {
