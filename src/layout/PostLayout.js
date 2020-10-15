@@ -12,7 +12,7 @@ export default function PostLayout({ children, slug }) {
       <Header />
 
       <ContentTable slug={slug} />
-      <Post>{children}</Post>
+      <Post className="transition-color">{children}</Post>
       <ScrollTop />
     </PostContainer>
   );
@@ -38,6 +38,7 @@ const Post = styled.main`
   -ms-grid-columns: 1fr min(75ch, 100%) 1fr;
   grid-template-columns: 1fr min(75ch, 100%) 1fr;
   color: var(--bg-contrast);
+
   padding: 3rem 0;
   position: relative;
 
@@ -117,12 +118,14 @@ const Post = styled.main`
 
   /* Normal post text  */
   p {
+    @extend .transition;
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     line-height: 1.6em;
     font-size: 1.2em;
     color: var(--bg-contrast);
     opacity: 0.9;
+    transition: inherit;
   }
 
   /* Magical full-bleed image container  */
