@@ -33,6 +33,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 20px 0 #00000025;
   padding: 15px 20px;
   border-radius: 20px;
   margin-top: 15px;
@@ -40,6 +41,7 @@ const Container = styled.div`
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px 0 #00000025;
   }
 
   section {
