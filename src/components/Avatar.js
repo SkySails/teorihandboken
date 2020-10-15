@@ -9,7 +9,7 @@ export default function Avatar({ name, src }) {
           <defs>
             <linearGradient id="gradient" x1="1" x2="0" y1="1" y2="0">
               <stop offset="0%" stopColor="#128CDE"></stop>
-              <stop offset="100%" stopColor="#00FFC2"></stop>
+              <stop offset="100%" stopColor="var(--primary-color)"></stop>
             </linearGradient>
           </defs>
         </svg>
