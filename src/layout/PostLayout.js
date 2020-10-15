@@ -1,33 +1,70 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
+import ContentTable from "../components/ContentTable";
+import Header from "../components/Header";
+import ScrollProgress from "../components/ScrollProgress";
+import ScrollTop from "../components/ScrollTop";
 
-export default function PostLayout({ children }) {
-  return <PostContainer>{children}</PostContainer>;
+export default function PostLayout({ children, slug }) {
+  return (
+    <PostContainer>
+      <ScrollProgress />
+      <Header />
+
+      <ContentTable slug={slug} />
+      <Post>{children}</Post>
+      <ScrollTop />
+    </PostContainer>
+  );
 }
 
-const PostContainer = styled.main`
+const PostContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5em 1fr;
+  grid-template-areas:
+    "Header"
+    "Content";
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0 1.5em;
+`;
+
+const Post = styled.main`
+  grid-area: content;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr min(75ch, 100%) 1fr;
   grid-template-columns: 1fr min(75ch, 100%) 1fr;
   color: white;
-  padding: 5rem 20px;
+  padding: 3rem 0;
   position: relative;
 
-  & > *:not(.full-bleed) {
+  & > *:not(.full-bleed):not(#post-header) {
     -ms-grid-column: 2;
     grid-column: 2;
   }
 
-  /* Main post header  */
-  .post-subject {
-    margin-top: 10px;
-  }
   /* All headings within the post itself  */
   .content-header {
     margin-bottom: 0;
-    padding-top: 50px;
-    margin-top: -20px;
+    padding-top: 8rem;
+    margin-top: -6rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    /* &:not(h3):after {
+      content: "";
+      position: relative;
+      display: relative;
+      width: 100%;
+      height: 2px;
+      margin-left: 20px;
+      background: var(--primary-color);
+      opacity: 0.2;
+    } */
   }
 
   /* Those shiny looking inline-links!  */
@@ -89,11 +126,12 @@ const PostContainer = styled.main`
 
   /* Magical full-bleed image container  */
   .full-bleed {
-    width: 100%;
+    width: calc(100% + 2 * 1.5em);
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1 / 4;
     margin: 20px 0;
+    margin-left: -1.5em;
 
     img {
       max-height: 50vh;
@@ -127,7 +165,6 @@ const PostContainer = styled.main`
   }
 
   .content-list {
-    margin: 0px 0 5px 10px;
     line-height: 1.8em;
     list-style: none;
 
