@@ -12,7 +12,7 @@ export const ThemeToggle = ({ className }) => {
   return (
     <ThemeToggleContainer
       onClick={toggleColorScheme}
-      className={`${className} ${colorScheme}`.trim()}
+      className={` ${colorScheme}`.trim()}
     >
       <svg
         className="moon"
