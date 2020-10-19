@@ -6,7 +6,7 @@ import Arrow from "../icons/Arrow";
 export default function HomeButton() {
   return (
     <Link href="/">
-      <StyledAnchor tabIndex="0">
+      <StyledAnchor tabIndex="0" className="transition-color">
         <StyledArrow /> Tillbaka till startsidan
       </StyledAnchor>
     </Link>

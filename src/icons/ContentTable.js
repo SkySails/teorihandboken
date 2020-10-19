@@ -11,7 +11,12 @@ export default function Arrow({ className, color }) {
       height="100%"
       viewBox="0 0 45 27"
     >
-      <g id="Group_1" data-name="Group 1" transform="translate(-157 -104)">
+      <g
+        id="Group_1"
+        data-name="Group 1"
+        transform="translate(-157 -104)"
+        className="transition-svg"
+      >
         <rect
           id="Rectangle_2"
           data-name="Rectangle 2"

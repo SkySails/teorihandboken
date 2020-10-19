@@ -29,12 +29,18 @@ export default function ContentTable({ slug }) {
           items={headings.map((h) => h.id)}
           currentClassName="is-current"
           offset={-200}
+          className="transition-bg"
         >
-          <h2 style={{ marginBottom: 20 }}>Innehåll</h2>
+          <h2 className="transition-color" style={{ marginBottom: 20 }}>
+            Innehåll
+          </h2>
           {headings.map((h) => (
             <li
               key={h.id}
-              className={parseInt(h.tagName.charAt(1)) === 2 && "heading"}
+              className={
+                parseInt(h.tagName.charAt(1)) === 2 &&
+                "heading transition-color"
+              }
               style={{ marginLeft: (parseInt(h.tagName.charAt(1)) - 2) * 10 }}
             >
               <a href={`#${h.id}`}>{h.innerText}</a>
