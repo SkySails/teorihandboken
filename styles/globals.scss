@@ -21,6 +21,9 @@ body {
   stop {
     transition: $bezier;
   }
+  rect {
+    transition: $bezier;
+  }
 }
 .transition-color {
   transition: color $bezier;
