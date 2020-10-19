@@ -31,8 +31,8 @@ export default function Header() {
             y2="1"
             gradientUnits="objectBoundingBox"
           >
-            <stop offset="0" stop-color="var(--bg-primary)" />
-            <stop offset="1" stop-opacity="0" stop-color="var(--bg-primary)" />
+            <stop offset="0" stopColor="var(--bg-primary)" />
+            <stop offset="1" stopOpacity="0" stopColor="var(--bg-primary)" />
           </linearGradient>
         </defs>
         <rect

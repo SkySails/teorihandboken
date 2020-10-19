@@ -13,8 +13,8 @@ export default function Home({ posts }) {
       <Head>
         <title>Startsida | Fullstack Blog</title>
       </Head>
-      <Header />
-      <Content>
+      <Header></Header>
+      <Content className="transition-bg">
         <Hero>
           <img
             src="img/hero-logo.png"

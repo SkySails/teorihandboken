@@ -21,9 +21,6 @@ body {
   stop {
     transition: $bezier;
   }
-  rect {
-    transition: $bezier;
-  }
 }
 .transition-color {
   transition: color $bezier;
@@ -55,5 +52,5 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #089473;
 }
